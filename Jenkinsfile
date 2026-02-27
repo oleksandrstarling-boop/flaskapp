@@ -43,7 +43,8 @@ steps {
 steps {
  sh """
  sleep 2
- curl -s http://localhost:${HOST_PORT}/health | grep -q "healthy" 
+ curl -s http://localhost:${HOST_PORT}/health | grep -q "healthy" || (echo "❌ Health check failed - 'healthy' not found in response" && exit 1)
+            echo "✅ Smoke test passed - App is healthy"
  """
  }
  }
