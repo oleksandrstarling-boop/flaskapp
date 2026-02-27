@@ -43,7 +43,7 @@ steps {
 steps {
  sh """
  sleep 5
- curl -s http://localhost:${HOST_PORT}/health | grep -q {"status":"healthy"} 
+ curl -s http://localhost:${HOST_PORT}/health | grep -q '{"status":"healthy"}'
  """
  }
  }
