@@ -43,7 +43,7 @@ steps {
 steps {
  sh """
  sleep 2
- curl -s http://localhost:${HOST_PORT}/health | grep healthy
+ curl -s http://localhost:${HOST_PORT}/health | grep healthy || (echo "Health check failed" && exit 1)
  """
  }
  }
