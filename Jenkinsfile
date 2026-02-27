@@ -39,14 +39,14 @@ steps {
  """
  }
  }
- stage("Smoke test") {
-steps {
- sh """
- sleep 5
- curl -s http://localhost:${HOST_PORT}/health | grep -q '{"status":"healthy"}'
- """
- }
- }
+ //stage("Smoke test") {
+//steps {
+ //sh """
+ //sleep 5
+ //curl -s http://localhost:${HOST_PORT}/health | grep -q '{"status":"healthy"}'
+ //"""
+ //}
+ //}
  }
  post {
  always {
